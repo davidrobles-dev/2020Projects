@@ -7,7 +7,7 @@ userInterface = Tk()
 
 userInterface.title("File Management System")
 
-browsedir = Button(userInterface, background="white" , text ="Browse")
+browsedir = Button(userInterface, background="white" , text ="Browse", command = userInterface.destroy)
 browsedir.pack(side = LEFT)
 
 # Loop the user-interface
