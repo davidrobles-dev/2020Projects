@@ -1,6 +1,7 @@
 # Import Python Library
 import os
 from tkinter import *
+import tkinter.filedialog as fd
 
 # Initialize the Tkinter window
 userInterface = Tk()
@@ -12,10 +13,16 @@ userInterface.title("File Manager")
 userInterface.geometry("275x300")
 indentVaule = 60
 
+# Function to browse for directory
+def browsefile():
+    dirpath = fd.askdirectory
+    # print (dirpath)
+    return dirpath
+
 # Browse for the directory inside the computer
 Label(userInterface,text="Directory:").place(x=20,y=20)
-linkdir =Entry(userInterface,width =20).place(x=75,y=20)
-browsedir = Button(userInterface, background="white" , text ="Browse", command = userInterface.destroy)
+browsedir = Button(userInterface, background="white" , text ="Browse", command = browsefile())
+linkdir =Entry(userInterface,width =20,text=browsefile).place(x=75,y=20)
 browsedir.place(x=205,y=15)
 
 # Do radiobutton to determine what type of sort the client wants
